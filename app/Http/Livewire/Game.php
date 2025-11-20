@@ -50,6 +50,8 @@ class Game extends Component
             if ($response->successful()) {
                 $data = $response->json();
 
+                //dd($data);
+
                 // validamos que haya preguntas
                 if (!empty($data)) {
                     $this->question = $data[0];

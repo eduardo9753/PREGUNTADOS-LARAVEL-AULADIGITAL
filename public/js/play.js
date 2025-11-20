@@ -42,7 +42,7 @@ function loadNextQuestion() {
 
             document.getElementById('status-message').classList.add('d-none');
             document.getElementById('question-container').classList.remove('d-none');
-            document.getElementById('question-text').textContent = data.question;
+            document.getElementById('question-text').innerHTML = data.question;
 
             const answersDiv = document.getElementById('answers');
             answersDiv.innerHTML = '';
@@ -50,8 +50,8 @@ function loadNextQuestion() {
             data.answers.forEach(answer => {
                 const btn = document.createElement('button');
                 btn.className = 'boton boton-color-verde-oscuro';
-                btn.textContent = answer.text;
-                btn.onclick = () => sendAnswer(answer.id, answer.correct);
+                btn.textContent = answer.titulo;
+                btn.onclick = () => sendAnswer(answer.id, answer.es_correcta);
                 answersDiv.appendChild(btn);
             });
 

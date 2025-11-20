@@ -28,7 +28,7 @@
                 <div class="banquea-card shadow-lg border-0 rounded-4" style="width: 90%;">
                     <div class="card-body text-center">
                         <h6 class="text-uppercase fw-bold text-primary mb-3">Pregunta</h6>
-                        <h5 class="fw-semibold text-dark mb-4" style="text-align: justify">{{ $question['Pregunta'] }}</h5>
+                        <h5 class="fw-semibold text-dark mb-4" style="text-align: justify">{!! $question['titulo'] !!}</h5>
 
                         <div class="row g-3 mb-4">
                             @foreach ($answers as $answer)
@@ -36,11 +36,11 @@
                                     <div wire:click="selectAnswer({{ $answer['id'] }})"
                                         class="p-3 rounded-3 border text-center fw-medium
                                         @if ($selectedAnswer == $answer['id']) border-primary bg-primary text-white
-                                        @elseif($isChecked && $answer['correct']) border-success bg-success text-white
-                                        @elseif($isChecked && !$answer['correct'] && $selectedAnswer == $answer['id']) border-danger bg-danger text-white
+                                        @elseif($isChecked && $answer['es_correcta']) border-success bg-success text-white
+                                        @elseif($isChecked && !$answer['es_correcta'] && $selectedAnswer == $answer['id']) border-danger bg-danger text-white
                                         @else border-secondary-subtle @endif"
                                         style="transition: all 0.2s ease; cursor:pointer;">
-                                        {{ $answer['text'] }}
+                                        {{ $answer['titulo'] }}
                                     </div>
                                 </div>
                             @endforeach
