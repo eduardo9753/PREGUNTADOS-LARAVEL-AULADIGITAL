@@ -45,7 +45,7 @@ class Game extends Component
     public function loadQuestion()
     {
         try {
-            $response = Http::get("https://enam.pe/api/preguntados/questions/{$this->category_id}/{$this->totalQuestions}");
+            $response = Http::get("https://preunicursos.com/api/preguntados/questions/{$this->category_id}/{$this->totalQuestions}");
 
             if ($response->successful()) {
                 $data = $response->json();

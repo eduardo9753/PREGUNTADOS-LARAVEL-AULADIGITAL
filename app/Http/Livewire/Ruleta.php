@@ -14,7 +14,7 @@ class Ruleta extends Component
     public function mount()
     {
         // Traer categorías desde la API
-        $response = Http::get('https://veterinaria.banquea.pe/api/preguntados/questions/categories');
+        $response = Http::get('https://preunicursos.com/api/preguntados/questions/categories');
 
         if ($response->ok()) {
             $this->categories = $response->json();
