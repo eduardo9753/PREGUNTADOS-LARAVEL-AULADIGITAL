@@ -1,0 +1,156 @@
+/* Sidebar lateral */
+.sidebar {
+  background-color: #02555b;
+  color: #fff;
+  width: 19%;
+  min-width: 220px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+/* Logo */
+.sidebar .logo {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Header */
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Menú */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Ítems del menú */
+.menu-toggle {
+  display: none;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+/* Hover blanco con texto verde */
+.menu-item:hover {
+  background-color: #fff;
+  color: #02555b;
+  transform: translateX(5px);
+}
+
+.menu-item:hover i {
+  color: #02555b;
+}
+
+/* Íconos */
+.menu-item i {
+  font-size: 20px;
+  color: #fff;
+}
+
+/* ------------------------- */
+/* RESPONSIVE DESIGN */
+/* ------------------------- */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -240px;
+    top: 0;
+    height: 100%;
+    width: 240px;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* Botón menú (hamburguesa) */
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #02555b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    z-index: 1100;
+    font-size: 22px;
+  }
+}
+
+/* ------------------------- */
+/* OPCIONAL: Overlay oscuro */
+/* ------------------------- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 900;
+  display: none;
+  transition: opacity 0.3s;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+
+/* Evita que el sidebar empuje el contenido en móvil */
+@media (max-width: 768px) {
+
+  .dashboard-layout {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0 !important;
+    padding-top: 60px !important; /* espacio para menú hamburguesa */
+  }
+
+  /* Botón hamburguesa siempre arriba */
+  .menu-toggle {
+    z-index: 2000 !important;
+  }
+
+  /* Sidebar sobrepuesto sin desplazar nada */
+  .sidebar {
+    position: fixed !important;
+    left: -240px;
+    top: 0;
+    height: 100vh;
+    z-index: 1500;
+  }
+}

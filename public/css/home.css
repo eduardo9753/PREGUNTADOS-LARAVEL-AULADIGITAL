@@ -1,0 +1,179 @@
+/* Layout principal */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    padding: 0px;
+}
+
+/* Cards Home*/
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* === TARJETAS === */
+.banquea-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f7fff7 100%);
+    border-radius: 25px;
+    padding: 30px 20px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid #e8f5e9;
+    position: relative;
+}
+
+.banquea-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(72, 187, 120, 0.2);
+}
+
+/* Ícono superior tipo Duolingo */
+.banquea-icon {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    background: #e9f9ec;
+    color: #2e7d32;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    box-shadow: 0 0 8px rgba(46, 125, 50, 0.2);
+}
+
+/* Botón Banquea */
+.banquea-btn {
+    display: inline-block;
+    background: #00c853;
+    color: white !important;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 200, 83, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.banquea-btn:hover {
+    background: #00e676;
+    box-shadow: 0 6px 14px rgba(0, 230, 118, 0.4);
+    transform: translateY(-3px);
+} 
+
+/* Estado bloqueado */
+.locked {
+    opacity: 0.7;
+    filter: grayscale(0.5);
+}
+
+.locked .banquea-btn {
+    background: #ccc;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .banquea-card {
+        padding: 20px 15px;
+    }
+
+    .banquea-icon {
+        font-size: 2.3rem;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+}
+
+
+
+
+.boton {
+  background: linear-gradient(135deg, #02555b, #037065);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(2, 85, 91, 0.35);
+  transition: all 0.3s ease;
+}
+
+.boton:hover {
+  background: linear-gradient(135deg, #037065, #013b40);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(2, 85, 91, 0.45);
+  color: #fff;
+}
+
+.boton:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(2, 85, 91, 0.4);
+}
+
+.boton-color-verde-oscuro {
+  background-color: #02555b;
+}
+
+.boton-color-azul-oscuro {
+  background-color: #01191b;
+}
+
+.fondo-cuerpo {
+    padding: 10px;
+    color: white;
+    border-radius: 5px; 
+}
+.fondo-rojo {
+    background-color: #f10d2b;
+}
+
+.fondo-azul {
+    background-color: #0d6efd;
+}
+
+/* Responsive: sidebar colapsa en móviles */
+@media (max-width: 768px) {
+    .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px 0;
+    }
+
+    .sidebar-header {
+        display: none; /* ocultamos logo para móvil */
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .menu-item {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+
+

@@ -1,0 +1,231 @@
+/* --- CONTENEDOR GENERAL --- */
+.rank-wrapper {
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Título */
+.rank-title-main {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #166534;
+    margin-bottom: 30px;
+}
+
+/* --- CARRUSEL --- */
+.rank-carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible !important; /* <- IMPIDE QUE SE CORTE LA ANIMACIÓN */
+}
+
+.rank-carousel {
+    width: 350px;
+    height: 320px;
+    position: relative;
+    overflow: visible !important; /* <- CORRECCIÓN CLAVE */
+}
+
+/* Slides */
+.rank-slide {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+    left: 100%;
+    transition: left .5s ease, opacity .5s ease;
+    overflow: visible !important; /* <- AHORA NADA SE CORTA */
+}
+
+/* Activo */
+.rank-slide.active {
+    left: 0;
+    opacity: 1;
+}
+
+/* Animaciones */
+.slide-left {
+    left: -100% !important;
+}
+
+.slide-right {
+    left: 100% !important;
+}
+
+/* --- BURBUJA DE RANGO --- */
+.rank-bubble {
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 4px solid #a7f3d0;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    transition: transform .3s ease;
+    overflow: visible;
+}
+
+.rank-bubble img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+/* Estados */
+.rank-bubble.current {
+    border-color: #facc15;
+    background: #fff9c4;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.rank-bubble.unlocked {
+    border-color: #22c55e;
+    background: #dcfce7;
+}
+
+.rank-bubble.locked {
+    opacity: .7;
+    border-color: #d1d5db;
+}
+
+/* Badge */
+.rank-badge {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 600;
+    color: #b45309;
+}
+
+/* Textos */
+.rank-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #166534;
+}
+
+.rank-range {
+    font-size: .85rem;
+    color: #4d7c0f;
+}
+
+/* --- BOTONES (ESCRITORIO) --- */
+.nav-btn {
+    background: #22c55e;
+    color: #fff;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: all .25s ease;
+    z-index: 10;
+}
+
+.nav-btn:hover {
+    transform: scale(1.1);
+    background: #16a34a;
+}
+
+.nav-btn.left {
+    margin-right: 15px;
+}
+
+.nav-btn.right {
+    margin-left: 15px;
+}
+
+/* --- BOTONES RESPONSIVOS (CELULAR) --- */
+@media (max-width: 768px) {
+    .nav-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    .nav-btn.left {
+        margin-right: 5px;
+    }
+
+    .nav-btn.right {
+        margin-left: 5px;
+    }
+
+    .rank-carousel {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Indicador */
+.rank-indicator {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #166534;
+}
+
+/* Caja de puntos */
+.rank-points-box {
+    margin-top: 25px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    display: inline-block;
+    font-size: 1rem;
+    color: #166534;
+}
+
+/* Animación corregida */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); } /* <- antes 1.08 que se salía */
+    100% { transform: scale(1); }
+}
+
+
+/* Ajuste real para pantallas pequeñas */
+@media (max-width: 480px) {
+
+    .rank-carousel {
+        width: 260px !important;
+        height: 260px !important;
+    }
+
+    .rank-bubble {
+        width: 140px !important;
+        height: 140px !important;
+    }
+
+    .rank-title-main {
+        font-size: 1.4rem !important;
+    }
+
+    .nav-btn {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .rank-indicator {
+        margin-top: 10px !important;
+    }
+
+    .rank-points-box {
+        margin-top: 15px !important;
+        font-size: 0.9rem !important;
+        padding: 8px 15px !important;
+    }
+}
