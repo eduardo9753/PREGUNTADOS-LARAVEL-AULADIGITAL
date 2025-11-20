@@ -28,7 +28,7 @@
                 <div class="banquea-card shadow-lg border-0 rounded-4" style="width: 90%;">
                     <div class="card-body text-center">
                         <h6 class="text-uppercase fw-bold text-primary mb-3">Pregunta</h6>
-                        <h5 class="fw-semibold text-dark mb-4" style="text-align: justify">{{ $question['text'] }}</h5>
+                        <h5 class="fw-semibold text-dark mb-4" style="text-align: justify">{{ $question['Pregunta'] }}</h5>
 
                         <div class="row g-3 mb-4">
                             @foreach ($answers as $answer)
