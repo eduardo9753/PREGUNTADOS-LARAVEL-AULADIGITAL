@@ -83,7 +83,8 @@ class Game extends Component
     {
         if (!$this->selectedAnswer) return;
 
-        $correct = collect($this->answers)->firstWhere('correct', 1);
+        $correct = collect($this->answers)->firstWhere('es_correcta', 1);
+
         $this->isCorrect = $this->selectedAnswer == ($correct['id'] ?? null);
         $this->isChecked = true;
 
