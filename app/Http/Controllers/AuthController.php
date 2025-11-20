@@ -21,7 +21,7 @@ class AuthController extends Controller
         //llamada con cabecera
         $response = Http::withHeaders([
             'X-API-KEY' => 'login_preguntados'
-        ])->post('https://veterinaria.banquea.pe/api/preguntados/login', [
+        ])->post('https://preunicursos.com/api/preguntados/login', [
             'study_id' => $study_id
         ]);
 

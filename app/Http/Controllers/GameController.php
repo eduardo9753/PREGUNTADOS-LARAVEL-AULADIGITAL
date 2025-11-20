@@ -23,7 +23,7 @@ class GameController extends Controller
     {
         $user = session('usuario');
         $user_id = session('usuario.id');
-        $response = Http::get("https://veterinaria.banquea.pe/api/preguntados/game/avatars/{$user_id}");
+        $response = Http::get("https://preunicursos.com/api/preguntados/game/avatars/{$user_id}");
 
         if ($response->successful()) {
             $avatar = $response->json();
@@ -58,7 +58,7 @@ class GameController extends Controller
     {
         $user_id = session('usuario.id');
 
-        $response = Http::get("https://veterinaria.banquea.pe/api/preguntados/score/single/$user_id/$correct");
+        $response = Http::get("https://preunicursos.com/api/preguntados/score/single/$user_id/$correct");
 
         if ($response->successful()) {
             $data = $response->json();
@@ -77,7 +77,7 @@ class GameController extends Controller
     {
         //dd($user_id);
         //api de categorias+
-        $response = Http::get('https://veterinaria.banquea.pe/api/preguntados/questions/categories');
+        $response = Http::get('https://preunicursos.com/api/preguntados/questions/categories');
         $categories = $response->successful() ? $response->json() : [];
         //dd($categories);
         return view('game.manager', [
@@ -89,7 +89,7 @@ class GameController extends Controller
     //para crear el juego
     public function create(Request $request)
     {
-        $response = Http::post("https://veterinaria.banquea.pe/api/preguntados/game/create", [
+        $response = Http::post("https://preunicursos.com/api/preguntados/game/create", [
             'creator_id' => session('usuario.id'),
             'category_id' => $request->category_id,
             'category_type' => 'question',
@@ -109,7 +109,7 @@ class GameController extends Controller
     //sala de espera de los jugadores
     public function wait($game_id)
     {
-        $response = Http::get("https://veterinaria.banquea.pe/api/preguntados/game/get/{$game_id}");
+        $response = Http::get("https://preunicursos.com/api/preguntados/game/get/{$game_id}");
         if ($response->successful()) {
             $game = $response->json();
             //dd($game);
@@ -125,9 +125,9 @@ class GameController extends Controller
     public function play($game_id)
     {
         //dd($game_id);
-        $response = Http::get("https://veterinaria.banquea.pe/api/preguntados/game/get/{$game_id}");
+        $response = Http::get("https://preunicursos.com/api/preguntados/game/get/{$game_id}");
         $user_id = session('usuario.id');
-        $personaje = Http::get("https://veterinaria.banquea.pe/api/preguntados/game/avatars/{$user_id}");
+        $personaje = Http::get("https://preunicursos.com/api/preguntados/game/avatars/{$user_id}");
         if ($personaje->successful()) {
             $avatar = $response->json();
         } else {

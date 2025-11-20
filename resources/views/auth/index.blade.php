@@ -14,7 +14,7 @@
         <form action="{{ route('login.auth') }}" class="login--form" method="POST">
             @csrf
 
-            <h1 class="login--title">Bienvenido</h1>
+            <h1 class="login--title">PreuniCursos</h1>
 
             <div class="login--content">
                 <div class="login-box">
@@ -23,7 +23,7 @@
                     <div class="login--input-box">
                         <input type="text" required class="login-input" name="study_id" id="login-input-text"
                             placeholder=" " />
-                        <label for="" class="login--input-label">ID Estudiante o Email</label>
+                        <label for="" class="login--input-label">Email</label>
                     </div>
                 </div>
 

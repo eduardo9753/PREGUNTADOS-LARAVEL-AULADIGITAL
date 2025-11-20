@@ -21,7 +21,7 @@ class Rankcontroller extends Controller
     public function index()
     {
         $user_id = session('usuario.id');
-        $response = Http::get("https://veterinaria.banquea.pe/api/preguntados/game/rangos/{$user_id}");
+        $response = Http::get("https://preunicursos.com/api/preguntados/game/rangos/{$user_id}");
 
         if ($response->successful()) {
             $data = $response->json();
@@ -43,7 +43,7 @@ class Rankcontroller extends Controller
     public function ranking()
     {
         $user_id = session('usuario.id');
-        $response = Http::get("https://veterinaria.banquea.pe/api/preguntados/game/ranking/top10");
+        $response = Http::get("https://preunicursos.com/api/preguntados/game/ranking/top10");
 
         if ($response->successful()) {
             $data = $response->json();
