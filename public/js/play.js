@@ -21,7 +21,7 @@ function loadNextQuestion() {
     if (isLoading) return;
     isLoading = true;
 
-    fetch(`https://veterinaria.banquea.pe/api/preguntados/questions/next/${gameId}/${playerId}`)
+    fetch(`https://preunicursos.com/api/preguntados/questions/next/${gameId}/${playerId}`)
         .then(res => res.json())
         .then(data => {
             isLoading = false;
@@ -85,7 +85,7 @@ function sendAnswer(answerId, correct) {
     isLoading = true;
     clearInterval(timerInterval);
 
-    fetch(`https://veterinaria.banquea.pe/api/preguntados/game/answer`, {
+    fetch(`https://preunicursos.com/api/preguntados/game/answer`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -112,7 +112,7 @@ function sendAnswer(answerId, correct) {
 
 
 function players(gameId) {
-    fetch(`https://veterinaria.banquea.pe/api/preguntados/game/players`, {
+    fetch(`https://preunicursos.com/api/preguntados/game/players`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ game_id: gameId })
@@ -155,7 +155,7 @@ function players(gameId) {
  * PARA MOSTRAR LOS RESULTADOS
  */
 function loadResults(gameId) {
-    fetch(`https://veterinaria.banquea.pe/api/preguntados/game/results/${gameId}`)
+    fetch(`https://preunicursos.com/api/preguntados/game/results/${gameId}`)
         .then(res => res.json())
         .then(data => {
             const container = document.getElementById('results');
@@ -208,7 +208,7 @@ function loadResults(gameId) {
  * PARA CONTAR LAS RESPUESTAS DEL USUARIO
  */
 function loadAnswerCounts(gameId) {
-    fetch(`https://veterinaria.banquea.pe/api/preguntados/game/count/${gameId}`)
+    fetch(`https://preunicursos.com/api/preguntados/game/count/${gameId}`)
         .then(res => res.json())
         .then(data => {
             const container = document.getElementById('countAnswer');

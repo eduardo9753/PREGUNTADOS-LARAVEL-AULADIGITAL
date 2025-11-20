@@ -54,7 +54,7 @@ function saveAvatar(userId, avatarUrl) {
         return;
     }
 
-    fetch('https://veterinaria.banquea.pe/api/preguntados/game/avatars', {
+    fetch('https://preunicursos.com/api/preguntados/game/avatars', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

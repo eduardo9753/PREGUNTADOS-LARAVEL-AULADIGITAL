@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadPlayers(code) {
-    fetch(`https://veterinaria.banquea.pe/api/preguntados/game/get/${code}`)
+    fetch(`https://preunicursos.com/api/preguntados/game/get/${code}`)
         .then(res => res.json())
         .then(data => {
             console.log('datos', data);

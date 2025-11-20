@@ -15,7 +15,7 @@ async function joinGame() {
     }
 
     try {
-        const res = await fetch('https://veterinaria.banquea.pe/api/preguntados/game/join', {
+        const res = await fetch('https://preunicursos.com/api/preguntados/game/join', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ code, user_id: userId })
